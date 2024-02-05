@@ -42,7 +42,12 @@ export function ModeToggle() {
     //     </DropdownMenuItem>
     //   </DropdownMenuContent>
     // </DropdownMenu>
-    <Button variant={"outline"} size={"icon"} onClick={toggleHandler}>
+    <Button
+      variant={"outline"}
+      size={"icon"}
+      className="bg-transparent border-0"
+      onClick={toggleHandler}
+    >
       <Icon className="h-[1.2rem] w-[1.2rem]" />
     </Button>
     // <Switch  />
