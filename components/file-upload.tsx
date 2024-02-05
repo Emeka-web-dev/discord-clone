@@ -15,7 +15,12 @@ export const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
   if (value && fileType !== "pdf") {
     return (
       <div className="relative h-20 w-20">
-        <Image fill src={value} alt="Image Upload" className="rounded-full" />
+        <Image
+          fill
+          src={value}
+          alt="Image Upload"
+          className="rounded-full object-cover"
+        />
         <Button
           onClick={() => onChange("")}
           className="bg-rose-400 text-white p-1 rounded-full absolute top-0 -right-5 hover:bg-rose-500"

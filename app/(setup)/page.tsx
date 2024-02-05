@@ -1,8 +1,6 @@
 import { InitialModal } from "@/components/modals/initial-modal";
-import { ModeToggle } from "@/components/mode-toggle";
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
-import { UserButton } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
