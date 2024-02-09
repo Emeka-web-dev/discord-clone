@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -12,8 +11,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "./ui/switch";
+import { useEffect, useState } from "react";
 
 export function ModeToggle() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   const { setTheme, theme } = useTheme();
   const Icon = theme === "light" ? Sun : Moon;
   const toggleHandler = () => {
@@ -21,6 +26,7 @@ export function ModeToggle() {
     if (theme === "light") setTheme("dark");
   };
 
+  if (!isMounted) return;
   return (
     // <DropdownMenu>
     //   <DropdownMenuTrigger asChild>
